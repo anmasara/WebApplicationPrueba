@@ -5,19 +5,49 @@
 
 <!DOCTYPE html>
 <html>
-<head
+<head>
+    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title> New name page </title>
+    <title> Login </title>
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="~/css/materialize.min.css" media="screen,projection" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
+    
+    
+
 </head>
 
 <body>
+   
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <form class="col s12 m6 l6">
+            <div class="modal-content">
+                <h4>Recordar contraseña</h4>
+
+                <div class="row">
+                    <div class="input-field col s12">
+
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_prefix" type="email" class="validate" required>
+                        <label for="icon_prefix">Usuario</label>
+                        <label for="email" data-error="wrong" data-success="right"> </label>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </form>
+    </div>
             <div class="container">
                 
                 <div class="col s12 m6 l6">
@@ -31,15 +61,18 @@
                                 <form class="col s12 m6 l6">
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <i class="material-icons prefix">account_circle</i>
-                                            <input id="icon_prefix" type="text" class="validate">
-                                            <label for="icon_prefix">Usuario</label>
+                                            
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="email" type="email" class="validate" required>
+                                                <label for="icon_prefix">Usuario</label>
+                                                <label for="email" data-error="wrong" data-success="right"> </label>
+                                          
                                         </div>
                                         <div class="input-field col s12">
                                             <i class="material-icons prefix">vpn_key</i>
-                                            <input id="password" type="password" class="validate">
+                                            <input id="password" type="password" class="validate" required>
                                             <label for="password">Contraseña</label>
-                                            
+                                            <label for="password" data-error="wrong" data-success="right"> </label>
                                                 
                                             
                                         </div>
@@ -47,18 +80,25 @@
                                     <div class="row">
                                         <div class="col s12 m6 l6">
                                             <div class="card-action center">
-                                                <a class=" waves-effect waves-light btn"><i class="material-icons right">done</i>button</a>
+                                                <button id="login" class="btn waves-effect waves-light" type="submit" name="action">
+                                                    Login
+                                                    <i class="material-icons right">done</i>
+                                                </button>
 
 
                                             </div>
                                         </div>
                                         <div class="col s12 m6 l6">
                                             <div class="card-action center">
-                                                <a href="#">¿Olvidó su contraseña?</a>
+                                                <!-- Modal Trigger -->
+                                                <button data-target="modal1" class="btn modal-trigger">Modal</button>
 
                                             </div>
                                         </div>
                                         </div>
+
+                                            
+
                                 </form>
                                 
                             </div>
@@ -77,10 +117,19 @@
     <script type="text/javascript" src="~/js/materialize.js"> </script>
     <script src="~/js/init.js"></script>
     <script type="text/javascript">
-            $(document).ready(function (){
-       // alert("hello");
+
+          /*  $(document).ready(function (){
+                 alert("hello");
+            }); */
+        $(document).ready(function () {
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('.modal-trigger').leanModal();
         });
+
+      
+
     </script>
     <script type="text/javascript" src="~/js/materialize.min.js"></script>
+    
 </body>
 </html>
